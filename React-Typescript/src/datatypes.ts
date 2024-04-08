@@ -21,6 +21,7 @@ let dual: string | number;
 dual = "Bob";
 console.log(`Hello from ${dual}`);
 
+// Type alias
 type Person = {
   name: string;
   age?: number;
@@ -29,7 +30,9 @@ type Person = {
 let person: Person;
 person = { name: "Alice" };
 console.log(`Hello from ${person}`);
+// End
 
+// Interface
 interface Animal {
   name: string;
   age?: number;
@@ -38,7 +41,9 @@ interface Animal {
 let animal: Animal;
 animal = { name: "Bob" };
 console.log(`Hello from ${animal}`);
+// End
 
+// Extending interface
 interface Human extends Person {
   job: string;
 }
@@ -46,7 +51,9 @@ interface Human extends Person {
 let human: Human;
 human = { name: "Charlie", job: "Developer" };
 console.log(`Hello from ${human}`);
+// End
 
+// Extending type alias
 type Dog = Animal & {
   breed: string;
 };
@@ -54,3 +61,4 @@ type Dog = Animal & {
 let dog: Dog;
 dog = { name: "Dog", breed: "Golden Retriever" };
 console.log(`Hello from ${dog}`);
+// End

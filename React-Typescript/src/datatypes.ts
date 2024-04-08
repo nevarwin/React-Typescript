@@ -1,3 +1,4 @@
+export {};
 let text: string = "TypeScript";
 console.log(`Hello from ${text}`);
 

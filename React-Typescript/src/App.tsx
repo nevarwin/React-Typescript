@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import "./App.css";
 import InputField from "./components/InputField";
+import TodoList from "./components/TodoList";
 import { Todos } from "./Todo";
 
 const App: React.FC = () => {
+  // state for the inputed todo (string)
   const [todo, setTodo] = useState<string>("");
+
+  // state for using the inputed string to make a todo list or object
   const [todos, setTodos] = useState<Todos[]>([]);
 
   // added React.FormEvent for the type of e
@@ -31,9 +35,10 @@ const App: React.FC = () => {
     <div className="App">
       <header className="App-header">Kanban</header>
       <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
-      {todos.map((t) => (
+      <TodoList todos={todos} setTodos={setTodos} />
+      {/* {todos.map((t) => (
         <li>{t.title}</li>
-      ))}
+      ))} */}
     </div>
   );
 };

@@ -3,6 +3,7 @@ import "./App.css";
 import InputField from "./components/InputField";
 import TodoList from "./components/TodoList";
 import { Todos } from "./Todo";
+import { DragDropContext } from "react-beautiful-dnd";
 
 const App: React.FC = () => {
   // state for the inputed todo (string)
@@ -10,6 +11,8 @@ const App: React.FC = () => {
 
   // state for using the inputed string to make a todo list or object
   const [todos, setTodos] = useState<Todos[]>([]);
+
+  const [completedTodos, setCompletedTodos] = useState<Todos[]>([]);
 
   // added React.FormEvent for the type of e
   const handleAdd = (e: React.FormEvent) => {
@@ -35,7 +38,12 @@ const App: React.FC = () => {
     <div className="App">
       <header className="App-header">Kanban</header>
       <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
-      <TodoList todos={todos} setTodos={setTodos} />
+      <TodoList
+        todos={todos}
+        setTodos={setTodos}
+        completedTodos={completedTodos}
+        setCompletedTodos={setCompletedTodos}
+      />
       {/* {todos.map((t) => (
         <li>{t.title}</li>
       ))} */}

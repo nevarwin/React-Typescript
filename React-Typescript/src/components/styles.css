@@ -1,6 +1,6 @@
 .input {
   display: flex;
-  width: 90%;
+  width: 95%;
   position: relative;
   justify-content: center;
   align-items: center;
@@ -17,7 +17,7 @@
 }
 
 .Input__box:focus {
-  box-shadow: 0 0 10px 1000px #7da57d;
+  box-shadow: 0 0 10px 1000px #0035a9;
   outline: none;
 }
 
@@ -31,10 +31,10 @@
   right: 10%;
   padding: 10px 15px;
   height: 80%;
-  background-color: rgb(124, 159, 233);
+  background-color: #34acff;
   border-radius: 50px;
   border: none;
-  color: white;
+  color: #eaf6ff;
   font-size: 25px;
   transition: 0.3s;
   cursor: pointer;
@@ -46,27 +46,42 @@
 }
 
 .Submit__button:active {
-  background-color: rgb(124, 159, 233);
+  background-color: #34acff;
   transform: scale(0.9);
+}
+
+.container {
+  display: flex;
+  width: 95%;
+  margin-top: 10px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.todos_heading {
+  font-size: 30px;
+  font-weight: bold;
+  color: #eaf6ff;
 }
 
 .todos {
   z-index: 1;
   display: flex;
-  justify-content: space-evenly;
-  width: 90%;
-  flex-wrap: wrap;
+  width: 47.5%;
+  flex-direction: column;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #0683ff;
 }
 
 .todos_single {
   display: flex;
   align-items: center;
-  width: 29.5%;
   border-radius: 10px;
   padding: 20px;
   margin-top: 15px;
-  background-color: rgb(58, 141, 113);
-  color: black;
+  background-color: #addeff;
+  color: #0035a9;
 }
 
 .todos_single_text {
@@ -91,9 +106,13 @@
   cursor: pointer;
 }
 
-@media (max-width: 1200px) {
-  .todos_single {
-    width: 40%;
+.remove {
+  background-color: #d85b63;
+}
+
+@media (max-width: 1100px) {
+  .todos {
+    width: 45%;
   }
 }
 
@@ -103,8 +122,11 @@
   }
   .todos {
     width: 95%;
+    margin-bottom: 10px;
   }
-  .todos_single {
-    width: 100%;
+
+  .container {
+    width: 95%;
+    flex-direction: column;
   }
 }

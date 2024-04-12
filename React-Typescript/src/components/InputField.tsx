@@ -24,7 +24,7 @@ const InputField = ({ todo, setTodo, handleAdd }: InputFieldProps) => {
       <input
         // inputRef in input tag to work
         ref={inputRef}
-        type="input"
+        type="text"
         placeholder="Enter a task"
         className="Input__box"
         value={todo}

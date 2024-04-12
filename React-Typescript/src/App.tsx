@@ -10,9 +10,9 @@ const App: React.FC = () => {
   const [todo, setTodo] = useState<string>("");
 
   // state for using the inputed string to make a todo list or object
-  const [todos, setTodos] = useState<Todos[]>([]);
+  const [todos, setTodos] = useState<Array<Todos>>([]);
 
-  const [completedTodos, setCompletedTodos] = useState<Todos[]>([]);
+  const [completedTodos, setCompletedTodos] = useState<Array<Todos>>([]);
 
   // added React.FormEvent for the type of e
   const handleAdd = (e: React.FormEvent) => {
@@ -23,7 +23,7 @@ const App: React.FC = () => {
       setTodos([
         ...todos,
         {
-          id: todos.length + 1,
+          id: Date.now(),
           title: todo,
           isDone: false,
         },
@@ -32,10 +32,10 @@ const App: React.FC = () => {
     }
   };
 
-  const onDragEnd = (results: DropResult) => {
-    console.log(results);
+  const onDragEnd = (result: DropResult) => {
+    const { destination, source } = result;
 
-    const { destination, source } = results;
+    console.log(result);
 
     if (!destination) {
       return;
@@ -47,27 +47,25 @@ const App: React.FC = () => {
       return;
     }
 
-    let add,
-      active = todos,
-      completed = completedTodos;
-
-    console.log(source.droppableId);
+    let add;
+    let active = todos;
+    let complete = completedTodos;
 
     if (source.droppableId === "todoActive") {
       add = active[source.index];
       active.splice(source.index, 1);
     } else {
-      add = completed[source.index];
-      completed.splice(source.index, 1);
+      add = complete[source.index];
+      complete.splice(source.index, 1);
     }
 
     if (destination.droppableId === "todoCompleted") {
       active.splice(destination.index, 0, add);
     } else {
-      completed.splice(destination.index, 0, add);
+      complete.splice(destination.index, 0, add);
     }
 
-    setCompletedTodos(completed);
+    setCompletedTodos(complete);
     setTodos(active);
   };
 

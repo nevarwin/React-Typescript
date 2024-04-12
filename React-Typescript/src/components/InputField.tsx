@@ -8,7 +8,11 @@ interface InputFieldProps {
   handleAdd: (e: React.FormEvent) => void;
 }
 
-const InputField = ({ todo, setTodo, handleAdd }: InputFieldProps) => {
+const InputField: React.FC<InputFieldProps> = ({
+  todo,
+  setTodo,
+  handleAdd,
+}) => {
   // to remove the focus from the input field after submitting the form
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -23,12 +27,12 @@ const InputField = ({ todo, setTodo, handleAdd }: InputFieldProps) => {
     >
       <input
         // inputRef in input tag to work
-        ref={inputRef}
         type="text"
         placeholder="Enter a task"
-        className="Input__box"
         value={todo}
+        ref={inputRef}
         onChange={(e) => setTodo(e.target.value)}
+        className="Input__box"
       />
       <button type="submit" className="Submit__button">
         Go

@@ -5,22 +5,22 @@ import { Droppable } from "react-beautiful-dnd";
 
 // uses interface to define the type of todo, setTodo, and handleAdd
 interface TodoListProps {
-  todos: Todos[];
-  setTodos: React.Dispatch<React.SetStateAction<Todos[]>>;
-  completedTodos: Todos[];
-  setCompletedTodos: React.Dispatch<React.SetStateAction<Todos[]>>;
+  todos: Array<Todos>;
+  setTodos: React.Dispatch<React.SetStateAction<Array<Todos>>>;
+  completedTodos: Array<Todos>;
+  setCompletedTodos: React.Dispatch<React.SetStateAction<Array<Todos>>>;
 }
 
-const TodoList = ({
+const TodoList: React.FC<TodoListProps> = ({
   todos,
   setTodos,
   completedTodos,
   setCompletedTodos,
-}: TodoListProps) => {
+}) => {
   return (
     <div className="container">
       {/* Active tasks div */}
-      <Droppable droppableId="todoActive">
+      <Droppable droppableId={"todoActive"}>
         {(provided) => (
           <div
             className="todos"
@@ -51,7 +51,7 @@ const TodoList = ({
             {...provided.droppableProps}
           >
             <span className="todos_heading">Completed Tasks</span>
-            {completedTodos.map((todo, index) => (
+            {completedTodos?.map((todo, index) => (
               <SingleTodo
                 index={index}
                 key={todo.id}

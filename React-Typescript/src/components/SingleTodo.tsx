@@ -5,16 +5,12 @@ import { MdEdit, MdDelete } from "react-icons/md";
 import { FaCheck } from "react-icons/fa";
 import { Draggable } from "react-beautiful-dnd";
 
-// uses interface
-type SingleTodoProps = {
-  key: number;
-  todos: Todos[];
-  todo: Todos;
-  setTodos: React.Dispatch<React.SetStateAction<Todos[]>>;
+const SingleTodo: React.FC<{
   index: number;
-};
-
-const SingleTodo = ({ todos, todo, setTodos, index }: SingleTodoProps) => {
+  todo: Todos;
+  todos: Array<Todos>;
+  setTodos: React.Dispatch<React.SetStateAction<Array<Todos>>>;
+}> = ({ todos, todo, setTodos, index }) => {
   const [edit, setEdit] = useState<boolean>(false);
   const [editValue, setEditValue] = useState<string>(todo.title);
   const inputRef = useRef<HTMLInputElement>(null);

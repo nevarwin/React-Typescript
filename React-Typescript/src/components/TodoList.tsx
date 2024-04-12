@@ -20,7 +20,7 @@ const TodoList: React.FC<TodoListProps> = ({
   return (
     <div className="container">
       {/* Active tasks div */}
-      <Droppable droppableId={"todoActive"}>
+      <Droppable droppableId="todoActive">
         {(provided) => (
           <div
             className="todos"
@@ -43,7 +43,7 @@ const TodoList: React.FC<TodoListProps> = ({
       </Droppable>
 
       {/* Completed tasks div */}
-      <Droppable droppableId={"todoCompleted"}>
+      <Droppable droppableId="todoCompleted">
         {(provided) => (
           <div
             className="todos completed"

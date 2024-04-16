@@ -4,6 +4,7 @@ import InputField from "./components/InputField";
 import TodoList from "./components/TodoList";
 import { Todos } from "./Todo";
 import { DragDropContext, DropResult } from "react-beautiful-dnd";
+import { Typography } from "@mui/material";
 
 const App: React.FC = () => {
   // state for the inputed todo (string)
@@ -72,7 +73,9 @@ const App: React.FC = () => {
   return (
     <DragDropContext onDragEnd={onDragEnd}>
       <div className="App">
-        <header className="App-header">Kanban</header>
+        <Typography variant="h1" gutterBottom>
+          Kanban
+        </Typography>
         <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
         <TodoList
           todos={todos}

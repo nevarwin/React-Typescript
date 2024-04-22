@@ -5,7 +5,8 @@ import TodoList from "./components/TodoList";
 import { Todos } from "./Todo";
 import { DragDropContext, DropResult } from "react-beautiful-dnd";
 import { Typography } from "@mui/material";
-import MuiButton from "./components/MuiButton";
+// import MuiButton from "./components/MuiButton";
+import MuiTextField from "./components/MuiTextField";
 
 const App: React.FC = () => {
   // state for the inputed todo (string)
@@ -90,7 +91,8 @@ const App: React.FC = () => {
   ))} */}
         </div>
       </DragDropContext>
-      <MuiButton></MuiButton>
+      {/* <MuiButton></MuiButton> */}
+      <MuiTextField></MuiTextField>
     </>
   );
 };

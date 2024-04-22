@@ -9,7 +9,8 @@ import { Typography } from "@mui/material";
 // import MuiTextField from "./components/MuiTextField";
 // import MuiSelect from "./components/MuiSelect";
 // import MuiRadio from "./components/MuiRadio";
-import MuiCheckbox from "./components/MuiCheckbox";
+// import MuiCheckbox from "./components/MuiCheckbox";
+import MuiLayout from "./components/MuiLayout";
 
 const App: React.FC = () => {
   // state for the inputed todo (string)
@@ -98,7 +99,8 @@ const App: React.FC = () => {
       {/* <MuiTextField></MuiTextField> */}
       {/* <MuiSelect></MuiSelect> */}
       {/* <MuiRadio></MuiRadio> */}
-      <MuiCheckbox></MuiCheckbox>
+      {/* <MuiCheckbox></MuiCheckbox> */}
+      <MuiLayout></MuiLayout>
     </>
   );
 };

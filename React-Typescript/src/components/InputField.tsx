@@ -1,5 +1,7 @@
 import React, { useRef } from "react";
 import "./styles.css";
+import { Button, IconButton } from "@mui/material";
+import SendIcon from "@mui/icons-material/Send";
 
 // uses interface to define the type of todo, setTodo, and handleAdd
 interface InputFieldProps {
@@ -34,9 +36,10 @@ const InputField: React.FC<InputFieldProps> = ({
         onChange={(e) => setTodo(e.target.value)}
         className="Input__box"
       />
-      <button type="submit" className="Submit__button">
-        Go
-      </button>
+      <IconButton aria-label="send" type="submit" color="primary" disableRipple>
+        <SendIcon />
+      </IconButton>
+      <Button>Go</Button>
     </form>
   );
 };

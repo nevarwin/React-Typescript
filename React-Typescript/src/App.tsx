@@ -5,6 +5,7 @@ import TodoList from "./components/TodoList";
 import { Todos } from "./Todo";
 import { DragDropContext, DropResult } from "react-beautiful-dnd";
 import { Typography } from "@mui/material";
+import MuiButton from "./components/MuiButton";
 
 const App: React.FC = () => {
   // state for the inputed todo (string)
@@ -71,23 +72,26 @@ const App: React.FC = () => {
   };
 
   return (
-    <DragDropContext onDragEnd={onDragEnd}>
-      <div className="App">
-        <Typography variant="h1" gutterBottom>
-          Kanban
-        </Typography>
-        <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
-        <TodoList
-          todos={todos}
-          setTodos={setTodos}
-          completedTodos={completedTodos}
-          setCompletedTodos={setCompletedTodos}
-        />
-        {/* {todos.map((t) => (
-        <li>{t.title}</li>
-      ))} */}
-      </div>
-    </DragDropContext>
+    <>
+      <DragDropContext onDragEnd={onDragEnd}>
+        <div className="App">
+          <Typography variant="h1" gutterBottom>
+            Kanban
+          </Typography>
+          <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
+          <TodoList
+            todos={todos}
+            setTodos={setTodos}
+            completedTodos={completedTodos}
+            setCompletedTodos={setCompletedTodos}
+          />
+          {/* {todos.map((t) => (
+    <li>{t.title}</li>
+  ))} */}
+        </div>
+      </DragDropContext>
+      <MuiButton></MuiButton>
+    </>
   );
 };
 

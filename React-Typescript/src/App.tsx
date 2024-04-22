@@ -7,7 +7,8 @@ import { DragDropContext, DropResult } from "react-beautiful-dnd";
 import { Typography } from "@mui/material";
 // import MuiButton from "./components/MuiButton";
 // import MuiTextField from "./components/MuiTextField";
-import MuiSelect from "./components/MuiSelect";
+// import MuiSelect from "./components/MuiSelect";
+import MuiRadio from "./components/MuiRadio";
 
 const App: React.FC = () => {
   // state for the inputed todo (string)
@@ -94,7 +95,8 @@ const App: React.FC = () => {
       </DragDropContext>
       {/* <MuiButton></MuiButton> */}
       {/* <MuiTextField></MuiTextField> */}
-      <MuiSelect></MuiSelect>
+      {/* <MuiSelect></MuiSelect> */}
+      <MuiRadio></MuiRadio>
     </>
   );
 };
